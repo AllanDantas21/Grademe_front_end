@@ -1,10 +1,12 @@
+import StarButton from './Star';
 
-const Header: React.FC = () => {
-  return (<>
-    <h1>
-      Visit official grademe website here:
-    </h1>
-  </>) 
+export default function Header() {
+    return (
+        <div className="navbar bg-base-100">
+            <div className="flex-1 flex justify-center">
+                <a className="btn btn-ghost text-xl pr-2">Visit grademe.fr</a>
+                <StarButton />
+            </div>
+        </div>
+    );
 }
-
-export default Header;
