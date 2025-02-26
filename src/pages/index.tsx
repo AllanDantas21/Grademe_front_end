@@ -6,7 +6,7 @@ import '../styles/codeHighlight.css';
 
 export default function Home() {
   return (
-    <div className="bg-blue-100 relative min-h-screen">
+    <div className="bg-blue-100 relative h-screen overflow-hidden">
       <CodeBackground />
       <div className="relative z-10">
         <Header />
