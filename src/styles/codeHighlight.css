@@ -1,0 +1,39 @@
+/* C language syntax highlighting */
+.language-c {
+  color: #000000;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+.language-c .keyword {
+  color: #0000ff;
+}
+
+.language-c .string {
+  color: #a31515;
+}
+
+.language-c .comment {
+  color: #008000;
+}
+
+.language-c .preprocessor {
+  color: #800080;
+}
+
+.language-c .number {
+  color: #09885a;
+}
+
+.language-c .function {
+  color: #795e26;
+}
+
+/* Add basic code formatting */
+.code-snippet {
+  background-color: rgba(240, 240, 240, 0.24);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  transform: rotate(var(--rotation, -3deg));
+}
