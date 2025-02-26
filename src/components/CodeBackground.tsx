@@ -2,12 +2,12 @@ import React from 'react';
 
 const CodeBackground: React.FC = () => {
   const codeSnippets = [
-    `#include <stdio.h>
+    `#include "ft_printf.h"
 int main() {
-    printf("Hello, World!\\n");
-    return 0;
+    ft_printf("Hello, World!\\n");
+    return (0);
 }`,
-    `void bubbleSort(int arr[], int n) {
+    `void ft_sort_int_tab(int arr[], int n) {
     int i, j, temp;
     for (i = 0; i < n-1; i++) {
         for (j = 0; j < n-i-1; j++) {
@@ -19,9 +19,11 @@ int main() {
         }
     }
 }`,
-    `struct Node {
-    int data;
-    struct Node* next;
+    `typedef struct s_btree {
+	struct s_btree	*left;
+	struct s_btree	*right;
+	void			*item;
+}	t_btree;
 };`,
     `int pipefd[2];
     pipe(pipefd);
@@ -38,29 +40,39 @@ int main() {
     }`
   ];
  
+  const totalSnippets = codeSnippets.length;
+  const cols = Math.ceil(Math.sqrt(totalSnippets));
+  const rows = Math.ceil(totalSnippets / cols);
+  
   return (
     <div className="code-background absolute inset-0 z-0 overflow-hidden opacity-10 pointer-events-none">
-      {codeSnippets.map((snippet, index) => (
-        <pre key={index} className={`code-snippet text-sm absolute ${getRandomPosition()}`}>
-          <code className="language-c">
-            {snippet}
-          </code>
-        </pre>
-      ))}
+      {codeSnippets.map((snippet, index) => {
+        const row = Math.floor(index / cols);
+        const col = index % cols;
+        
+        const baseTop = (row * 100 / rows);
+        const baseLeft = (col * 100 / cols);
+        
+        const offsetTop = Math.random() * 10 + 5;
+        const offsetLeft = Math.random() * 10 + 5;
+        
+        const top = `${baseTop + offsetTop}%`;
+        const left = `${baseLeft + offsetLeft}%`;
+        
+        return (
+          <pre 
+            key={index} 
+            className="code-snippet text-sm absolute"
+            style={{ top, left }}
+          >
+            <code className="language-c">
+              {snippet}
+            </code>
+          </pre>
+        );
+      })}
     </div>
   );
-};
-
-// Helper function to generate random positions
-const getRandomPosition = () => {
-  const positions = [
-    'top-10 left-1/4',
-    'bottom-20 right-10',
-    'top-1/3 right-1/4',
-    'bottom-1/4 left-10',
-    'top-1/2 left-1/3',
-  ];
-  return positions[Math.floor(Math.random() * positions.length)];
 };
 
 export default CodeBackground;
