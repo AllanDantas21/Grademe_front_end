@@ -15,7 +15,6 @@ export default function Header() {
                     
                     <div className="flex items-center gap-4">
                         <div className="flex items-center ml-2">
-                            <h1 className='text-black text-xl '>Visit grademe.ft</h1>
                             <StarButton />
                         </div>
                     </div>
