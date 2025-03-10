@@ -2,7 +2,7 @@ import { useCallback } from 'react'
 
 const CopySection: React.FC = () => {
     const handleCopy = useCallback(() => {
-        navigator.clipboard.writeText("source <(curl https://grademe.com.br/api/install)")
+        navigator.clipboard.writeText("source <(curl https://grademe-front-end.vercel.app/api/install)")
     }, [])
 
     return (
