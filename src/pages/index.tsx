@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Header from '../components/Header'
 import CopySection from '../components/CopySection';
 import CodeBackground from '../components/CodeBackground';
-import '../styles/codeHighlight.css';
 
 export default function Home() {
   return (
