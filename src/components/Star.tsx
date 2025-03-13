@@ -8,7 +8,7 @@ const StarButton: React.FC = () => {
     return (
         <div>
             <button className="btn flex" onClick={handleRedirect}>
-                <h1 className='text-black font-semibold text-xl'>Visit Grademe.fr</h1>
+                <h1 className='text-black font-semibold pr-1.5 text-xl'>Visit Grademe.fr</h1>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"

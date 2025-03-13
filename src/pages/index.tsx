@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import CopySection from '../components/CopySection';
 import CodeBackground from '../components/CodeBackground';
 import { motion } from 'framer-motion';
+import { FaGithub } from 'react-icons/fa';
 
 export default function Home() {
   const containerVariants = {
@@ -41,6 +42,19 @@ export default function Home() {
         <motion.div variants={childVariants}>
           <CopySection />
         </motion.div>
+        
+        <motion.a 
+          href="https://github.com/allandantas21/GradeMe_42Rio"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-6 right-6 bg-black/75 hover:bg-black text-white py-2 px-4 rounded-lg flex items-center gap-2 shadow-lg transition-colors duration-300"
+          variants={childVariants}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <FaGithub className="text-xl" />
+          <span>See Source Code</span>
+        </motion.a>
       </motion.div>
     </div>
   );
