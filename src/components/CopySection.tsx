@@ -6,7 +6,7 @@ const CopySection: React.FC = () => {
     const [showMessage, setShowMessage] = useState<boolean>(false);
     
     const handleCopy = useCallback(() => {
-        navigator.clipboard.writeText("source <(curl https://grademe.com.br/api/install.sh)")
+        navigator.clipboard.writeText("source <(curl https://grademe.com.br/api/install)")
         setCopyMessage("Copied to clipboard!");
         setShowMessage(true);
         
